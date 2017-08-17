@@ -1,4 +1,5 @@
+
 {
-    presets:["es2015","react],
-    plugins:["react-html-attrs"]
+	presets: ['es2015', 'react'],
+	plugins: ['react-html-attrs']
 }

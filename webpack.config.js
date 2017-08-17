@@ -3,13 +3,13 @@
  */
 
 module.exports={
-    entry:"./scr/main.js",
+    entry:"./src/main.js",
     output:{
         path:__dirname,
         filename:"dist/app.js"
     },
     module:{
-        loader:[
+        loaders:[
             {test:/\.js$/,loader:"babel-loader" ,exclude:/node_modules/},
             {test:/\.css$/,loader:"style-loader!css-loader" },
             {test:/\.(png|jpg|jpeg|gif|ttf)$/,loader:"file-loader" }
