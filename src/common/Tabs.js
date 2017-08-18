@@ -2,7 +2,8 @@
  * Created by Administrator on 2017/8/17 0017.
  */
 import React, {Component} from 'react'
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import store from '../store/index.js'
 import '../css/header-style.css'
 
 import nav from '../services/NavLeft.js'
@@ -23,22 +24,29 @@ export  default class Tabs extends Component{
         }
         let data=this.props.pathname==='/mall'?nav.shop:nav.data
         return (
-            <div>
-                <div class="bg" style={bgStyle} onClick={this.hide.bind(this)}></div>
-                <div class="tabs" style={showStyle}>
 
-                    {
-                        data.map((item,index)=>{
-                            return <a key={index} onClick={this.navAction.bind(this,item)}>{item.title}</a>
-                        })
-                    }
+                <div>
+
+                        <div class="bg" style={bgStyle} onClick={this.hide.bind(this)}></div>
+
+                    <div class="tabs" style={showStyle}>
+
+                        {
+                            data.map((item,index)=>{
+                                return <a key={index} onClick={this.navAction.bind(this,item)}>{item.title}</a>
+                            })
+                        }
+                    </div>
                 </div>
-            </div>
+
         )
     }
     navAction(item){
         this.props.history.push(item.path)
-        console.log(this.props.pathname);
+        store.dispatch({
+            type:"title",
+            val:''
+        })
         this.props.menuAction(item.header)
     }
     hide(){

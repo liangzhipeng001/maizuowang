@@ -5,7 +5,7 @@
 import React, {Component} from 'react'
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-
+import store from './store/index.js'
 
 import Header from './common/Header.js'
 import Tabs from  './common/Tabs.js'
@@ -16,8 +16,8 @@ import Cinema from './page/cinema/Cinema.js'
 import Mall from './page/mall/Mall.js'
 import Me from './page/me/Me.js'
 import Cards from './page/cards/Cards.js'
-
-console.log(Home);
+import City from './page/home/City.js'
+import ListMovie from './common/listMovie.js'
 import './css/app.css'
 export default class Wrap extends Component{
     constructor(){
@@ -25,7 +25,9 @@ export default class Wrap extends Component{
         super()
         this.state={
             title:"卖座电影",
-            show:false
+            show:false,
+            val:"",
+            index:""
         }
 
     }
@@ -33,7 +35,7 @@ export default class Wrap extends Component{
     render(){
         return (
             <Router>
-                <div class="wrap">
+                <div class="app">
                     <Header menuAction={this.menuAction.bind(this)} title={this.state.title} />
 
                     <Route path="/" render={({history,location})=>{
@@ -50,6 +52,8 @@ export default class Wrap extends Component{
                     <Route path="/mall" component={Mall}/>
                     <Route path="/me" component={Me}/>
                     <Route path="/cards" component={Cards}/>
+                    <Route path="/city" component={City}/>
+                    <Route path="/val/index" component={ListMovie}/>
                 </div>
             </Router>
         )
@@ -60,5 +64,12 @@ export default class Wrap extends Component{
         if(val){
             this.setState({title:val})
         }
+    }
+    componentWillMount() {
+        store.subscribe(()=>{
+
+            this.setState({val:store.getState().name,index:store.getState().i})
+        })
+
     }
 }

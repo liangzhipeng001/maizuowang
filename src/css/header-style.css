@@ -60,12 +60,13 @@
 /****************** tabs ***********************/
 .tabs{
     position: absolute;
-    top: 44px;
+    top: 43px;
     left: 0;
     right: 110px;
     bottom: 0;
     background: #232323;
     z-index: 1000;
+    transition:.2s;
 }
 .tabs a{
     display: block;
@@ -95,5 +96,7 @@
     left: 0;
     right: 0;
     z-index: 99;
-    background: rgba(0,0,0,.3);
 }
+
+
+

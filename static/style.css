@@ -11,26 +11,9 @@ body,html{
 i,em{
 font-style:normal;
 }
-.wrap{
-    width: 100%;
-    height: 100%;
-}
 
-.page{
+
+html,body{
     width: 100%;
     height: 100%;
-}
-#home{
-    position: absolute;
-    top: 44px;
-    bottom: 0;
-    background: red;
-    width: 100%;
-}
-#movie{
-    position: absolute;
-    top: 44px;
-    bottom: 0;
-    background: red;
-    width: 100%;
 }
