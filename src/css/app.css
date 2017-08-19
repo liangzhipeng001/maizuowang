@@ -131,3 +131,48 @@
 }
 
 
+#app .list-movie .img{
+    width: 100%;
+    height: auto;
+}
+#app .list-movie .img img{
+    width: 100%;
+    height: 100%;
+}
+#app .list-movie .title{
+    margin: 16px auto;
+    border-left: 16px solid RGB(228, 200, 156);
+    font-size: 16px;
+    padding-left: 4px;
+}
+#app .list-movie .common{
+    height: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+#app .list-movie .cont{
+    text-overflow: ellipsis;
+    margin-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#app .primary-button{
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+#app .primary-button button{
+    font-size: 14px;
+    min-width: 156px;
+    height: 36px;
+    line-height: 36px;
+    border: none;
+    background-color: #fe8233;
+    padding: 0;
+    margin: 0;
+    border-radius: 18px;
+    color: #fff;
+}

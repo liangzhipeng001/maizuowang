@@ -1,0 +1,74 @@
+
+
+#movie{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #f9f9f9;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+#movie .movies-top{
+    width: 100%;
+    height: 46px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+#movie .movies-top:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    border-bottom: solid #fe6e00 1px;
+    bottom: -1px;
+    left: 0;
+    transform: scaleY(0.5);
+}
+#movie .movies-top li{
+    display: block;
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 46px;
+    color: #6a6a6a;
+    cursor: pointer;
+}
+#movie .movies-top li.active{
+    color: #fe6e00;
+    border-bottom: solid;
+}
+#movie .movies-content{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+#movie .movies-content li{
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: dashed 1px #c9c9c9;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+}
+#movie .movies-content li .img{
+    width: 60px;
+    height: 80px;
+    overflow: hidden;
+}
+#movie .movies-content li .img img{
+    width: 100%;
+    height: 100%;
+}
+#movie .movies-content li .cont{
+    flex:1;
+    padding-left: 15px;
+}

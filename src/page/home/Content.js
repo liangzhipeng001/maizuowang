@@ -53,7 +53,8 @@ export  default class Content extends Component{
                     {
                         this.state.data1.map((item,index)=>{
                             return (
-                                <div class="item" key={index}>
+                                <div class="item" key={index}
+                                     onClick={this.listAction.bind(this,item.name,index+5)}>
                                     <div class="item-content">
                                         <div class="img">
                                             <img src={item.imgPath}/>
@@ -85,8 +86,8 @@ export  default class Content extends Component{
             val:val,
             i:i
         })
-        this.props.history.push("/"+val+"/"+i)
-        console.log(this.props.history);
+        this.props.history.push("/"+val+"/"+i+"/movies")
+        //console.log(this.props.history);
     }
 
     componentWillMount() {

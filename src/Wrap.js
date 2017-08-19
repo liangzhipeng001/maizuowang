@@ -53,7 +53,7 @@ export default class Wrap extends Component{
                     <Route path="/me" component={Me}/>
                     <Route path="/cards" component={Cards}/>
                     <Route path="/city" component={City}/>
-                    <Route path="/val/index" component={ListMovie}/>
+                    <Route  path={"/"+this.state.val+"/"+this.state.index+"/movies"} component={ListMovie}/>
                 </div>
             </Router>
         )
@@ -67,7 +67,6 @@ export default class Wrap extends Component{
     }
     componentWillMount() {
         store.subscribe(()=>{
-
             this.setState({val:store.getState().name,index:store.getState().i})
         })
 

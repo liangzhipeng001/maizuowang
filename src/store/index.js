@@ -9,13 +9,14 @@ let reducer=function (state,action){
 
     if(state==null){
         state={
-            name:""
+            name:"",
+            i:""
         }
     }
     if(action.type==="title"){
         state.name=action.val
+        state.i=action.i
     }
-    console.log(action);
     return state
 
 }
