@@ -2,16 +2,18 @@
 import React, {Component} from 'react'
 
 import '../../css/movies.css'
-
+import store from '../../store/index.js'
 import movieServices from '../../services/MovieServices.js'
 export  default class MoviesContent extends Component{
     // 构造
-    constructor(props) {
-        super(props);
+    constructor() {
+
+        super();
         // 初始状态
         this.state = {
             choosingArr:[],
-            host:[]
+            host:[],
+            history:""
         };
     }
     render(){
@@ -23,7 +25,7 @@ export  default class MoviesContent extends Component{
                     {
                         this.state.choosingArr.map((item,index)=>{
                             return (
-                                <li key={index}>
+                                <li key={index} onClick={this.listAction.bind(this,item.name,index)}>
                                     <div class="img">
                                         <img src={item.imgPath} alt=""/>
                                     </div>
@@ -83,5 +85,12 @@ export  default class MoviesContent extends Component{
                 this.setState({host:val})
             })
     }
-
+    listAction(val,i){
+        store.dispatch({
+            type:"title",
+            val:val,
+            i:i
+        })
+        this.props.history.push("/"+val+"/"+i+"/movies")
+    }
 }

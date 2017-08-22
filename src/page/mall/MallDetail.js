@@ -5,7 +5,7 @@
 import React, {Component} from 'react'
 
 import '../../css/mall.css'
-
+import store from '../../store'
 export  default class Detail extends Component{
 
     render(){
@@ -22,7 +22,8 @@ export  default class Detail extends Component{
                                     {
                                         item.products.map((val,i)=>{
                                             return (
-                                                <li class="list" key={i}>
+                                                <li class="list" key={i}
+                                                    onClick={this.detailAction.bind(this,val.id)}>
                                                     <div class="minImg">
                                                         <img src={val.image} alt=""/>
                                                     </div>
@@ -43,6 +44,12 @@ export  default class Detail extends Component{
             </div>
         )
     }
-
+    detailAction(id){
+        store.dispatch({
+            type:"detail",
+            id:id
+        })
+        this.props.history.push('/detail/id='+id)
+    }
 
 }

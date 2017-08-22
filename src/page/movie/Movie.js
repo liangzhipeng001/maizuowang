@@ -10,11 +10,13 @@ import '../../css/movies.css'
 let iScroll=null
 export  default class Movie extends Component{
     // 构造
-      constructor(props) {
-        super(props);
+      constructor({history}) {
+
+          super();
         // 初始状态
         this.state = {
-            index:""
+            index:"",
+            history:history
         };
       }
     render(){
@@ -24,7 +26,7 @@ export  default class Movie extends Component{
 
                  <div class="wrap-cont" ref="movies">
                      <div class="wrap">
-                         <MoviesContent index={this.state.index}/>
+                         <MoviesContent index={this.state.index} history={this.state.history}/>
                      </div>
                  </div>
             </div>

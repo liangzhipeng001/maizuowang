@@ -11,14 +11,26 @@ let reducer=function (state,action){
         state={
             name:"",
             i:"",
-            address:""
+            address:"深圳",
+            mallName:"",
+            mallId:"",
+            id:""
         }
     }
     if(action.type==="title"){
         state.name=action.val
         state.i=action.i
-        state.address=action.address
+        state.address=action.address ? action.address : state.address
+
     }
+    if(action.type=="mall"){
+        state.mallName=action.mallName
+        state.mallId=action.mallId
+    }
+    if(action.type=="detail"){
+        state.id=action.id
+    }
+
     return state
 
 }

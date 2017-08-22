@@ -1,0 +1,77 @@
+.mall{
+    position: absolute;
+    z-index: 100;
+    overflow: hidden;
+}
+.mall .mall-top{
+    width: 100%;
+    height: auto;
+}
+.mall .mall-top img{
+    width: 100%;
+}
+.detail-top{
+    padding: 17px 20px;
+    margin-bottom: 3px;
+    background: #fff url(../../static/1.png) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+}
+.detail-top img{
+    width: 50px;
+    height: 50px;
+}
+.detail-top .name{
+    font-size: 16px;
+    margin-left: 30px;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 50px;
+    display: inline-block;
+}
+.featured{
+    background-color: #f2f2f2;
+    min-height: 510px;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ .featured .item{
+    width: 48.8%;
+    margin-top: 5px;
+    margin-left: 4px;
+    box-sizing: border-box;
+    background: #fff;
+}
+ .featured .item .img{
+    width: 100%;
+    height: auto;
+}
+ .featured .item .img img{
+    width: 100%;
+}
+ .featured .item .name{
+    font-size: 12px;
+    height: 34px;
+    color: #323232;
+    text-align: left;
+    padding-left: 6px;
+}
+ .featured .item .price{
+    text-align: left;
+    padding-bottom: 10px;
+}
+ .featured .item .price span:nth-child(1){
+    font-size: 13px;
+    color: #ff5000;
+    padding-left: 6px;
+}
+ .featured .item .price span:nth-child(2){
+    font-size: 9px;
+    color: #999;
+    margin-left: 15px;
+}

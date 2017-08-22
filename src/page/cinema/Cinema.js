@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react'
 
-
+import CinemaService from '../../services/cinemaService.js'
 export  default class Cinema extends Component{
 
     render(){

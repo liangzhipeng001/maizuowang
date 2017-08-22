@@ -26,9 +26,7 @@ export  default class Tabs extends Component{
         return (
 
                 <div>
-
-                        <div class="bg" style={bgStyle} onClick={this.hide.bind(this)}></div>
-
+                    <div class="bg" style={bgStyle} onClick={this.hide.bind(this)}></div>
                     <div class="tabs" style={showStyle}>
 
                         {
@@ -47,6 +45,7 @@ export  default class Tabs extends Component{
             type:"title",
             val:''
         })
+
         this.props.menuAction(item.header)
     }
     hide(){

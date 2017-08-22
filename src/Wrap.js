@@ -18,7 +18,12 @@ import Me from './page/me/Me.js'
 import Cards from './page/cards/Cards.js'
 import City from './page/home/City.js'
 import ListMovie from './common/listMovie.js'
+import MallList from './common/MallList.js'
+
+import Detail from './common/detail/Detail.js'
 import './css/app.css'
+
+let unsubscribe=null
 export default class Wrap extends Component{
     constructor(){
 
@@ -27,7 +32,10 @@ export default class Wrap extends Component{
             title:"卖座电影",
             show:false,
             val:"",
-            index:""
+            index:"",
+            mallName:"",
+            mallId:"",
+            id:""
         }
 
     }
@@ -54,10 +62,13 @@ export default class Wrap extends Component{
                     <Route path="/cards" component={Cards}/>
                     <Route path="/city" component={City}/>
                     <Route  path={"/"+this.state.val+"/"+this.state.index+"/movies"} component={ListMovie}/>
+                    <Route path={"/"+this.state.mallName+"/"+this.state.mallId+"/mall-detail"} component={MallList}/>
+                    <Route path={'/detail/id='+this.state.id} component={Detail}/>
                 </div>
             </Router>
         )
     }
+
     menuAction(val){
 
         this.setState({show:!this.state.show})
@@ -66,9 +77,19 @@ export default class Wrap extends Component{
         }
     }
     componentWillMount() {
-        store.subscribe(()=>{
-            this.setState({val:store.getState().name,index:store.getState().i})
+
+        unsubscribe=store.subscribe(()=>{
+            this.setState({
+                val:store.getState().name,
+                index:store.getState().i,
+                mallName:store.getState().mallName,
+                mallId:store.getState().mallId,
+                id:store.getState().id
+            })
         })
 
+    }
+    componentWillUnmount(){
+        unsubscribe();
     }
 }

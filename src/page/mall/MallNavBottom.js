@@ -17,7 +17,7 @@ export  default class MallNavBottom extends Component{
                         return (
 
                                 <div key={index} class="item">
-                                    <img src={item.imgPath} alt=""/>
+                                    <img src={item.imgPath} />
                                 </div>
 
                         )
@@ -27,6 +27,5 @@ export  default class MallNavBottom extends Component{
             </div>
         )
     }
-
 
 }

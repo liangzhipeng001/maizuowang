@@ -19,16 +19,17 @@ let iScroll=null
 export  default class Mall extends Component{
 
     // 构造
-      constructor(props) {
-        super(props);
+      constructor({history}) {
+
+          super();
         // 初始状态
         this.state = {
             banner:[],
             nav:[],
             navBottom:[],
             detail:[],
-            featured:[]
-
+            featured:[],
+            history:history
         };
       }
     render(){
@@ -36,9 +37,9 @@ export  default class Mall extends Component{
             <div class="page" id="mall" ref="mall">
                 <div class="wrap">
                     <MallBanner banner={this.state.banner}/>
-                    <MallNav nav={this.state.nav}/>
+                    <MallNav nav={this.state.nav} history={this.state.history}/>
                     <MallNavBottom navBottom={this.state.navBottom}/>
-                    <MallDetail detail={this.state.detail}/>
+                    <MallDetail detail={this.state.detail} history={this.state.history}/>
                     <MallFeatured featured={this.state.featured}/>
                 </div>
             </div>
@@ -59,6 +60,7 @@ export  default class Mall extends Component{
         .then((val)=>{
             this.setState({featured:val})
         })
+
     }
     componentDidMount() {
         iScroll=new IScroll(this.refs.mall,{
@@ -68,5 +70,6 @@ export  default class Mall extends Component{
         iScroll.on("scrollStart",function (){
             this.refresh();
         })
+
     }
 }

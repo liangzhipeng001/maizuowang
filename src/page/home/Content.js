@@ -81,6 +81,7 @@ export  default class Content extends Component{
     }
 
     listAction(val,i){
+        //console.log(i);
         store.dispatch({
             type:"title",
             val:val,

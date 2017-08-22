@@ -15,6 +15,12 @@ const moviesHotApi="/v4/api/film/coming-soon?page=1&count=10"
 const mallApi='/api/ad/list'
 
 const mallFeatured='/api/recommend/home?page=1&num=20'
+
+const cinemaApi='/v4/api/cinema'
+
+const detailApi='/api/item'
+
+const detailImgApi='/api/item/desc'
 export  default{
     homeBannerApi,
     homeMovieApi,
@@ -23,5 +29,8 @@ export  default{
     moviesHotApi,
     mallApi,
     mallFeatured,
-    addressApi
+    addressApi,
+    cinemaApi,
+    detailApi,
+    detailImgApi
 }

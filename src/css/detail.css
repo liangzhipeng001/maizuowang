@@ -1,0 +1,31 @@
+.detail-banner{
+    width: 100%;
+    height: auto;
+}
+.detail-banner img{
+    width: 100%;
+}
+.swiper-pagination-bullet-active{
+    background: #000;
+}
+#detail .info{
+    padding: 4px 10px;
+    background: #fff;
+}
+#detail .name{
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#detail .name-data{
+    font-size: 12px;
+    color: #757575;
+    margin-top: 4px;
+}
+#detail .price{
+    margin-top: 4px;
+    color: #ff5000;
+    font-size: 21px;
+    font-weight: 700;
+}

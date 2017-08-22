@@ -13,6 +13,7 @@ export default class ListMovie extends Component{
 
     // 构造
       constructor ({location}){
+          console.log(location.pathname.split("/")[2]);
           super();
         // 初始状态
         this.state = {
@@ -20,6 +21,7 @@ export default class ListMovie extends Component{
         };
       }
     render(){
+
         let info=data.info[this.state.index]
         return (
                 <div>

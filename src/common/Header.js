@@ -42,11 +42,11 @@ export  default class Header extends Component{
 
     componentWillMount() {
         unsubscribe=store.subscribe(()=>{
-
             this.setState({titleMove:store.getState().name,
                 address:store.getState().address})
         })
-
     }
-
+    componentWillUnmount(){
+        unsubscribe();
+    }
 }
