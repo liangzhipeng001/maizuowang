@@ -7,6 +7,7 @@
     width: 100%;
     position: absolute;
     box-sizing: border-box;
+
 }
 
 #movie .movies-top{
@@ -42,7 +43,7 @@
     color: #fe6e00;
     border-bottom: solid;
 }
-#movie .movies-content{
+#movie .wrap-cont{
     position: absolute;
     top: 50px;
     left: 0;
@@ -50,7 +51,9 @@
     padding: 0 15px;
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
+
 #movie .movies-content li{
     width: 100%;
     padding: 20px 0;
@@ -71,4 +74,28 @@
 #movie .movies-content li .cont{
     flex:1;
     padding-left: 15px;
+}
+#movie .movies-content li .cont .title{
+    font-size: 16px;
+    line-height: 32px;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#movie .movies-content li .cont .intro{
+    height: 24px;
+    line-height: 24px;
+    color: #8e8e8e;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+}
+#movie .movies-content li .cont .cinemaCount{
+    line-height: 24px;
+    color: #8e8e8e;
+    font-size: 12px;
 }

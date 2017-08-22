@@ -31,6 +31,7 @@ export  default class HomeBanner extends Component{
                             )
                         })
                     }
+
                 </div>
             </div>
         )

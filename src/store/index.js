@@ -10,12 +10,14 @@ let reducer=function (state,action){
     if(state==null){
         state={
             name:"",
-            i:""
+            i:"",
+            address:""
         }
     }
     if(action.type==="title"){
         state.name=action.val
         state.i=action.i
+        state.address=action.address
     }
     return state
 

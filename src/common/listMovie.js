@@ -7,7 +7,7 @@ import React, {Component} from 'react'
 
 import store from "../store/index.js"
 import data from '../services/Data.js'
-console.log(store.getState());
+
 import '../css/app.css'
 export default class ListMovie extends Component{
 
