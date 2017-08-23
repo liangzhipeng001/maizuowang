@@ -14,7 +14,8 @@ let reducer=function (state,action){
             address:"深圳",
             mallName:"",
             mallId:"",
-            id:""
+            id:"",
+            show:''
         }
     }
     if(action.type==="title"){

@@ -38,7 +38,8 @@ export default class DetailBanner extends Component{
 
         bannerSwiper=new Swiper(this.refs.detail,{
             loop:true,
-            pagination: '.swiper-pagination'
+            pagination: '.swiper-pagination',
+            autoplay:2000
         })
 
     }

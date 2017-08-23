@@ -21,13 +21,16 @@ export default class DetailInfo extends Component{
                 <div class="name">{this.props.detail.masterName}</div>
                 <div class="name-data">{this.props.detail.slaveName}</div>
                 <div class="price">
-
+                    {"￥"+this.props.pirce[0]}
+                </div>
+                <div class="tips">
+                    <div class="express-fee">快递：0.00 元</div>
+                    <div class="sold-amount">{"销量:"+this.props.detail.count}</div>
+                    <div class="location">全国</div>
                 </div>
             </div>
         )
     }
 
-    componentWillMount() {
-        console.log(this.props.detail);
-    }
+
 }

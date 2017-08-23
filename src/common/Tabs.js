@@ -7,10 +7,13 @@ import store from '../store/index.js'
 import '../css/header-style.css'
 
 import nav from '../services/NavLeft.js'
+let unsubscribe=null
 export  default class Tabs extends Component{
     constructor(){
         super()
-
+        this.state={
+            id:""
+        }
     }
 
     render(){
@@ -22,7 +25,12 @@ export  default class Tabs extends Component{
             background: this.props.show?"rgba(0,0,0,0.5)" : "rgba(0,0,0,0)",
             display: this.props.show?"block" : "none"
         }
-        let data=this.props.pathname==='/mall'?nav.shop:nav.data
+        let data=""
+        if(this.props.pathname==='/mall'||this.props.pathname==='/detail/id='+this.state.id){
+            data=nav.shop
+        }else{
+            data=nav.data
+        }
         return (
 
                 <div>
@@ -50,5 +58,18 @@ export  default class Tabs extends Component{
     }
     hide(){
         this.props.menuAction()
+    }
+    componentWillMount() {
+
+        unsubscribe=store.subscribe(()=>{
+            this.setState({
+
+                id:store.getState().id
+            })
+        })
+
+    }
+    componentWillUnmount(){
+        unsubscribe();
     }
 }

@@ -6,13 +6,15 @@ import store from '../../store/index.js'
 import homeServices from "../../services/homeServices.js"
 export  default class Content extends Component{
     // 构造
-      constructor() {
-        super();
+      constructor({history}) {
+
+          super();
 
           // 初始状态
         this.state = {
             data:[],
-            data1:[]
+            data1:[],
+            history
         };
       }
     render(){
@@ -42,7 +44,7 @@ export  default class Content extends Component{
                             )
                         })
                     }
-                    <div class="more-btn">
+                    <div class="more-btn" onClick={this.btnAction.bind(this)}>
                         更多热映电影
                     </div>
                 </div>
@@ -72,7 +74,7 @@ export  default class Content extends Component{
                             )
                         })
                     }
-                    <div class="more-btn">
+                    <div class="more-btn" onClick={this.comingAction.bind(this)}>
                         更多即将上映电影
                     </div>
                 </div>
@@ -81,14 +83,14 @@ export  default class Content extends Component{
     }
 
     listAction(val,i){
-        //console.log(i);
+
         store.dispatch({
             type:"title",
             val:val,
             i:i
         })
         this.props.history.push("/"+val+"/"+i+"/movies")
-        //console.log(this.props.history);
+
     }
 
     componentWillMount() {
@@ -103,4 +105,13 @@ export  default class Content extends Component{
         })
 
     }
+
+    btnAction(){
+        this.state.history.push("/movies")
+    }
+    comingAction(){
+        this.state.history.push("/movies")
+    }
+
+
 }

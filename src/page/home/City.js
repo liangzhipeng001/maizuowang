@@ -92,7 +92,8 @@ export  default class City extends Component{
     componentDidMount() {
         iScroll=new IScroll(this.refs.city,{
             probeType:3,
-            bounce:false
+            bounce:false,
+            mouseWheel: true
         })
         iScroll.on("scrollStart",function (){
             this.refresh();

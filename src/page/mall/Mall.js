@@ -40,7 +40,7 @@ export  default class Mall extends Component{
                     <MallNav nav={this.state.nav} history={this.state.history}/>
                     <MallNavBottom navBottom={this.state.navBottom}/>
                     <MallDetail detail={this.state.detail} history={this.state.history}/>
-                    <MallFeatured featured={this.state.featured}/>
+                    <MallFeatured featured={this.state.featured} history={this.state.history}/>
                 </div>
             </div>
         )
@@ -65,7 +65,8 @@ export  default class Mall extends Component{
     componentDidMount() {
         iScroll=new IScroll(this.refs.mall,{
             probeType:3,
-            bounce:false
+            bounce:false,
+            mouseWheel: true
         })
         iScroll.on("scrollStart",function (){
             this.refresh();

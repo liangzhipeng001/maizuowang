@@ -9,6 +9,7 @@ import store from '../../store'
 export  default class Detail extends Component{
 
     render(){
+
         return (
             <div class="detail-wrap">
                 {

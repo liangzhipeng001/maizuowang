@@ -51,7 +51,8 @@ export  default class HomeBanner extends Component{
     componentDidMount() {
         //console.log(this.state.banner.length);
         bannerSwiper=new Swiper(this.refs.in,{
-            loop:true
+            loop:true,
+            autoplay:2000
         })
     }
 }

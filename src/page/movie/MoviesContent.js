@@ -4,6 +4,7 @@ import React, {Component} from 'react'
 import '../../css/movies.css'
 import store from '../../store/index.js'
 import movieServices from '../../services/MovieServices.js'
+let unsubscribe=null
 export  default class MoviesContent extends Component{
     // 构造
     constructor() {
@@ -13,12 +14,14 @@ export  default class MoviesContent extends Component{
         this.state = {
             choosingArr:[],
             host:[],
-            history:""
+            history:"",
+            show:""
         };
     }
     render(){
         let showOne=this.props.index==0?{display:"block"}:{display:"none"}
-        let showTwo=this.props.index==1?{display:"block"}:{display:"none"}
+
+        let showTwo=(this.props.index==1)?{display:"block"}:{display:"none"}
         return (
             <div class="movies-content">
                 <ul class="choosing" style={showOne}>
@@ -84,6 +87,8 @@ export  default class MoviesContent extends Component{
 
                 this.setState({host:val})
             })
+
+
     }
     listAction(val,i){
         store.dispatch({

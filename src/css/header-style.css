@@ -8,6 +8,7 @@
     background: #282828;
     display: flex;
     justify-content: space-between;
+    z-index: 10000;
 }
 .header:before{
     content: "";

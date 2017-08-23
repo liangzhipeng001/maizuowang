@@ -1,3 +1,8 @@
+#detail{
+    overflow: hidden;
+    bottom: 48px;
+}
+
 .detail-banner{
     width: 100%;
     height: auto;
@@ -29,3 +34,110 @@
     font-size: 21px;
     font-weight: 700;
 }
+#detail .tips{
+    margin: 2px 0;
+    font-size: 12px;
+}
+#detail .tips .express-fee{
+    display: inline-block;
+    width: 33%;
+    color: #757575;
+}
+#detail .tips .sold-amount{
+    display: inline-block;
+    width: 33%;
+    color: #757575;
+    text-align: center;
+}
+#detail .tips .location{
+    text-align: right;
+    display: inline-block;
+    width: 33%;
+    color: #757575;
+}
+
+#detail .annex{
+    margin: 10px 0;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    padding: 0 12px;
+    background-color: #fff;
+}
+#detail .detail-bottom{
+    width: 100%;
+}
+#detail .detail-bottom .const{
+    background-color: #fff;
+    padding: 8px;
+}
+#detail .detail-bottom .const p img{
+    width: 100%!important;
+    height: auto;
+}
+
+ .buy{
+    position: absolute;
+    bottom: 0;
+    height: 48px;
+    width: 100%;
+    border-top: 1px solid #ececec;
+    background-color: #fff;
+    z-index: 100;
+    max-width: 600px;
+}
+.buy .buy-left{
+    display: block;
+    float: left;
+    width: 70px;
+    padding: 4px 0;
+    text-align: center;
+    line-height: 48px;
+    color: #000;
+    box-sizing: border-box;
+}
+.buy .buy-right{
+    color: #fff;
+    font-size: 16px;
+    float: right;
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    line-height: 48px;
+    background-color: #ff5000;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    bottom: 48px;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0,0,0,.3);
+    max-width: 600px;
+}
+.menu .menu-pick{
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    max-width: 600px;
+}
+.menu .menu-pick .menu-info{
+    padding: 10px 10px 0;
+    box-sizing: border-box;
+}
+.menu .menu-pick .menu-info .close{
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    border-radius: 50%;
+    border: 1px solid #a2a2a2;
+    color: gray;
+    padding: 4px;
+    height: 16px;
+    width: 16px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 14px;
+}
+

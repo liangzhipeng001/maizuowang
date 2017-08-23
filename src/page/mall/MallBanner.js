@@ -29,8 +29,9 @@ export  default class MallBanner extends Component{
 
     componentDidUpdate() {
         bannerSwiper=new Swiper(this.refs.mall,{
-            loop:true,
-            pagination: '.swiper-pagination'
+            pagination: '.swiper-pagination',
+            autoplay:2000,
+            loop:true
         })
 
     }
