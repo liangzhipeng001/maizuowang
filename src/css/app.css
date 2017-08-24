@@ -13,18 +13,7 @@
     bottom: 0;
     left: 0;
 }
-.city-appear {
-    transform: translateY(-100%);
-}
 
-.city-appear.city-appear-active {
-    transform: translateY(0%);
-    transition: 0.4s;
-}
-#city.leave{
-    transform: translateY(-100%);
-    transition: 0.4s;
-}
 #home{
     width: 100%;
     position: absolute;
@@ -150,6 +139,7 @@
     overflow: hidden;
     margin-bottom: 10px;
     padding-left: 20px;
+    font-size: 12px;
 }
 #app .list-movie .cont{
     text-overflow: ellipsis;

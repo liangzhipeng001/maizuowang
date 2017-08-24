@@ -8,7 +8,9 @@ function getMoviesChoosing(){
     return new Promise((resolve, reject)=>{
         axios.get(API.moviesChoosingApi)
             .then((response)=>{
+
                 var arr=response.data.data.films
+                //console.log(arr);
                 if(arr==null){
                     getMoviesChoosing()
                 }else{
@@ -75,8 +77,27 @@ function getMoviesHost(){
     })
 }
 
+function getMoviesData(id){
+    return new Promise((resolve,reject)=>{
+        axios.get("/v4/api/film/"+id+"?t__="+new Date().getTime())
+        .then((response)=>{
+            var obj={}
+            var data=new Date(response.data.data.film.premiereAt)
+            obj.director=response.data.data.film.director //导演
+            obj.actors=response.data.data.film.actors //主演
+            obj.imgPath=response.data.data.film.cover.origin //img
+            obj.language=response.data.data.film.nation+"("+response.data.data.film.language+")" //语言
+            obj.category=response.data.data.film.category  //类型
+            obj.premiereAt=data.getMonth()+1+"月"+data.getDate()+"日上映"
+            obj.synopsis=response.data.data.film.synopsis
+
+            resolve(obj)
+        })
+    })
+}
 
 export default{
     getMoviesChoosing,
-    getMoviesHost
+    getMoviesHost,
+    getMoviesData
 }

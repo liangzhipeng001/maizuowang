@@ -34,7 +34,7 @@
 }
 .header .title{
     display: inline-block;
-    padding: 0 16px;
+    padding: 0 15px;
     line-height: 44px;
     color: #fff;
     font-size: 14px;
@@ -97,7 +97,9 @@
     left: 0;
     right: 0;
     z-index: 99;
+    background: rgba(0,0,0,.5);
 }
+
 
 
 

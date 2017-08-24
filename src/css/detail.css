@@ -119,7 +119,7 @@
     background-color: #fff;
     position: absolute;
     width: 100%;
-    bottom: 0;
+    bottom: 1px;
     max-width: 600px;
 }
 .menu .menu-pick .menu-info{
@@ -140,4 +140,94 @@
     line-height: 16px;
     font-size: 14px;
 }
+
+.menu .menu-pick .menu-info .img{
+    float: left;
+    width: 88px;
+    height: 88px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.menu .menu-pick .menu-info .img img{
+    width: 100%;
+    height: 100%;
+}
+.menu .menu-pick .menu-info .price{
+    float: left;
+    margin-left: 16px;
+}
+.menu .menu-pick .menu-info .price .money{
+    font-size: 18px;
+    margin-top: 40px;
+    color: #ff5000;
+}
+
+
+.menu .menu-pick .select{
+    padding: 0 10px;
+    max-height: 200px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.menu .menu-pick .select .select-title{
+    margin-top: 8px  ;
+    font-size: 14px  ;
+}
+.menu .menu-pick .select .select-item{
+    margin-top: 4px;
+}
+.menu .menu-pick .select .select-item span.pick {
+    border: 1px solid #ff5000;
+    color: #ff5000;
+}
+.menu .menu-pick .select .select-item span{
+    border: 1px solid rgba(0,0,0,.3);
+    padding: 5px 16px;
+    border-radius: 2px;
+    font-size: 10px;
+    margin: 4px 8px 4px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.menu .menu-pick .count{
+    border-top: 1px solid #f2f2f2;
+    margin: 0 10px;
+}
+.menu .menu-pick .count .count-title{
+    margin: 12px 0 4px;
+    font-size: 14px;
+}
+.menu .menu-pick .count .count-type{
+    margin: 8px 0;
+    width: 100%;
+    height: 100%;
+}
+.menu .menu-pick .count .count-type span{
+    line-height: 28px;
+    float: left;
+    height: 28px;
+    color: #000;
+    width: 40px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.4)
+}
+.menu .menu-pick .count .count-type span.less{
+    font-size: 20px;
+    line-height: 24px;
+    border-right: none;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+}
+.menu .menu-pick .count .count-type span.add{
+    border-left: none;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+
 

@@ -1,0 +1,47 @@
+#cinema{
+    overflow: hidden;
+}
+#cinema .cinema-wrap{
+    width: 100%;
+    background: #fff;
+}
+#cinema .cinema-wrap .title{
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    padding-left: 16px;
+    background: #e1e1e1;
+    margin-bottom: 1px;
+    color: #636363;
+    cursor: pointer;
+
+}
+
+#cinema .cinema-wrap .cont{
+    margin: 0 auto;
+    border-bottom: 1px solid #e1e1e1;
+    cursor: pointer;
+    min-width: 320px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+#cinema .cinema-wrap .cont .address{
+    display: inline-block;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ccc;
+    width: 230px;
+    margin-bottom: 10px;
+}
+#cinema .cinema-wrap .cont .name{
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: text-top;
+    margin-bottom: 10px;
+    font-size: 16px;
+}

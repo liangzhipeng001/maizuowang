@@ -22,8 +22,8 @@ export  default class Tabs extends Component{
             transform:this.props.show?"none":"translateX(-100%)"
         }
         let bgStyle = {
-            background: this.props.show?"rgba(0,0,0,0.5)" : "rgba(0,0,0,0)",
-            display: this.props.show?"block" : "none"
+            //background: this.props.show?"rgba(0,0,0,0.5)" : "rgba(0,0,0,0)"
+            display:this.props.show?"block":"none"
         }
         let data=""
         if(this.props.pathname==='/mall'||this.props.pathname==='/detail/id='+this.state.id){
@@ -34,7 +34,19 @@ export  default class Tabs extends Component{
         return (
 
                 <div>
-                    <div class="bg" style={bgStyle} onClick={this.hide.bind(this)}></div>
+
+                        <ReactCSSTransitionGroup
+
+                            transitionName="bg1"
+                            transitionName="example"
+                            transitionEnterTimeout={2500}
+                            transitionLeaveTimeout={0}>
+                            <div class="bg"
+                                 style={bgStyle} onClick={this.hide.bind(this)}>
+
+                            </div>
+                        </ReactCSSTransitionGroup>
+
                     <div class="tabs" style={showStyle}>
 
                         {
