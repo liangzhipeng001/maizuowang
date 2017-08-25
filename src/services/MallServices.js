@@ -70,7 +70,6 @@ function getMallFeaturedData(){
                     getMallFeaturedData()
                 }else{
                     window.sessionStorage.setItem("MallFeatured",JSON.stringify(arr))
-                    console.log(arr);
                     var newArr= response.data.data.list.map((item)=>{
                         var obj={}
                         obj.id=item.id

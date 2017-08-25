@@ -32,6 +32,9 @@
     border-right: 1px solid #222;
     box-shadow: 1px 0 1px #363636;
 }
+.header .icon-menu:before{
+    content: "\E618";
+}
 .header .title{
     display: inline-block;
     padding: 0 15px;
@@ -50,13 +53,18 @@
 .header .address:after{
     font-size: 12px;
 }
+.header .icon-arrow-down:after{
+    content: "\E602";
+}
 .header .icon-person{
     display: inline-block;
     width: 50px;
     text-align: center;
     color: #999;
 }
-
+.header .icon-person:after{
+    content: "\E62B";
+}
 
 /****************** tabs ***********************/
 .tabs{

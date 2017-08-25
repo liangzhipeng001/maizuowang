@@ -15,7 +15,8 @@ let reducer=function (state,action){
             mallName:"",
             mallId:"",
             id:"",
-            show:''
+            show:'',
+            ticketId:''
         }
     }
     if(action.type==="title"){
@@ -31,7 +32,9 @@ let reducer=function (state,action){
     if(action.type=="detail"){
         state.id=action.id
     }
-
+    if(action.type=='ticketId'){
+        state.ticketId=action.ticketId
+    }
     return state
 
 }

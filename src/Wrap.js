@@ -19,7 +19,7 @@ import Cards from './page/cards/Cards.js'
 import City from './page/home/City.js'
 import ListMovie from './common/listMovie.js'
 import MallList from './common/MallList.js'
-
+import Tickets from './common/Tickets.js'
 import Detail from './common/detail/Detail.js'
 import './css/app.css'
 
@@ -35,7 +35,8 @@ export default class Wrap extends Component{
             index:"",
             mallName:"",
             mallId:"",
-            id:""
+            id:"",
+            ticketId:""
         }
 
     }
@@ -64,6 +65,7 @@ export default class Wrap extends Component{
                     <Route  path={"/"+this.state.val+"/"+this.state.index+"/movies"} component={ListMovie}/>
                     <Route path={"/"+this.state.mallName+"/"+this.state.mallId+"/mall-detail"} component={MallList}/>
                     <Route path={'/detail/id='+this.state.id} component={Detail}/>
+                    <Route path={'/tickets/id='+this.state.ticketId} component={Tickets}/>
                 </div>
             </Router>
         )
@@ -84,7 +86,10 @@ export default class Wrap extends Component{
                 index:store.getState().i,
                 mallName:store.getState().mallName,
                 mallId:store.getState().mallId,
-                id:store.getState().id
+                id:store.getState().id,
+                ticketId:store.getState().ticketId
+            },()=>{
+                console.log(this.state.ticketId);
             })
         })
 

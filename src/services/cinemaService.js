@@ -63,7 +63,17 @@ function getCinemaData(){
     })
 
 }
-getCinemaData()
+"http://m.maizuo.com/v4/api/cinema/916?__t=1503640126071"
+function getTickets(id){
+    return new Promise((resolve,reject)=>{
+        axios.get("/v4/api/cinema/"+id+"?__t="+new Date().getTime())
+        .then((response)=>{
+
+            resolve(response.data.data.cinema)
+        })
+    })
+}
 export  default{
-    getCinemaData
+    getCinemaData,
+    getTickets
 }

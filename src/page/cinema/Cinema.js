@@ -3,40 +3,44 @@
  */
 import React, {Component} from 'react'
 import '../../css/cinema.css'
+import store from '../../store'
 import CinemaService from '../../services/cinemaService.js'
 let iScroll = null
 export  default class Cinema extends Component {
     // 构造
-    constructor() {
+    constructor({history}) {
+        
         super();
         // 初始状态
         this.state = {
             arr: [],
-            index:0,
-            show:false
+            index: 0,
+            show: false,
+            history:history
         };
     }
 
     render() {
-        let styleCSS={display:"block"}
-        let styleCss1={display:"none"}
-        let showBack=this.state.show?{display:"block"}:{display:"none"}
+        let styleCSS = {display: "block"}
+        let styleCss1 = {display: "none"}
+        let showBack = this.state.show ? {display: "block"} : {display: "none"}
 
         return (
             <div class="page" id="cinema" ref="cinema">
                 <div class="wrap">
                     <div class="cinema-wrap">
                         {
-                            this.state.arr.map((item,index)=>{
+                            this.state.arr.map((item, index)=> {
                                 return (
                                     <div key={index}>
                                         <div class="title" onClick={this.showIndex.bind(this,index)}>{item.one}</div>
                                         <div style={(this.state.index==index?styleCSS:styleCss1)}>
                                             {
-                                                item.map((item,index)=>{
+                                                item.map((item, index)=> {
                                                     return (
-                                                        <div class="cont" key={index}>
-                                                            <div class="name" >{item.name}</div>
+                                                        <div class="cont" key={index}
+                                                             onClick={this.idAction.bind(this,item.id)}>
+                                                            <div class="name">{item.name}</div>
                                                             <div class="address">{item.address}</div>
                                                         </div>
                                                     )
@@ -71,20 +75,31 @@ export  default class Cinema extends Component {
         iScroll.on("scrollStart", function () {
             this.refresh();
         })
-        var temp=this
-        iScroll.on("scroll",function (){
-            if(Math.abs(iScroll.y)>=310){
+        var temp = this
+        iScroll.on("scroll", function () {
+            if (Math.abs(iScroll.y) >= 310) {
 
-                temp.setState({show:true})
-            }else{
-                temp.setState({show:false})
+                temp.setState({show: true})
+            } else {
+                temp.setState({show: false})
             }
         })
     }
-    showIndex(index){
-        this.setState({index:index})
+
+    showIndex(index) {
+        this.setState({index: index})
     }
-    backTopAction(){
-        iScroll.scrollTo(0,0,1000)
+
+    backTopAction() {
+        iScroll.scrollTo(0, 0, 1000)
+    }
+
+    idAction(val) {
+
+        store.dispatch({
+            type:"ticketId",
+            ticketId:val
+        })
+        this.state.history.push('/tickets/id='+val)
     }
 }
