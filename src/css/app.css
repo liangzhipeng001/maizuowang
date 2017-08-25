@@ -150,6 +150,7 @@
     overflow: hidden;
     margin-bottom: 10px;
     padding-left: 20px;
+    font-size: 12px;
 }
 #app .list-movie .cont{
     text-overflow: ellipsis;

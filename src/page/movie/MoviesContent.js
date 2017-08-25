@@ -28,7 +28,7 @@ export  default class MoviesContent extends Component{
                     {
                         this.state.choosingArr.map((item,index)=>{
                             return (
-                                <li key={index} onClick={this.listAction.bind(this,item.name,index)}>
+                                <li key={index} onClick={this.listAction.bind(this,item.name,item.id)}>
                                     <div class="img">
                                         <img src={item.imgPath} alt=""/>
                                     </div>
@@ -52,7 +52,7 @@ export  default class MoviesContent extends Component{
                     {
                         this.state.host.map((item,index)=>{
                             return (
-                                <li key={index}>
+                                <li key={index} onClick={this.listAction.bind(this,item.name,item.id)}>
                                     <div class="img">
                                         <img src={item.imgPath} alt=""/>
                                     </div>
@@ -79,12 +79,12 @@ export  default class MoviesContent extends Component{
     componentWillMount() {
         movieServices.getMoviesChoosing()
         .then((val)=>{
-
+            //console.log(val.id);
             this.setState({choosingArr:val})
         })
         movieServices.getMoviesHost()
             .then((val)=>{
-
+                //console.log(val.id);
                 this.setState({host:val})
             })
 

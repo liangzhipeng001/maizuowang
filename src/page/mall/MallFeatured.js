@@ -9,7 +9,7 @@ import store from '../../store'
 export  default class MallFeatured extends Component{
 
     render(){
-
+        console.log(this.props.featured);
         return (
             <div class="featured-wrap">
                 <div class="title">—&nbsp;好货精选&nbsp;—</div>

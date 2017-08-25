@@ -10,19 +10,19 @@ import axios from 'axios'
 function getHomeBannerDate(){
     return new Promise((resolve,reject)=>{
         axios.get(`${API.homeBannerApi}?t__=${new Date().getTime()}`)
-        .then((response)=>{
-            var arr=response.data.data.billboards
-            if(arr==null){
-                getHomeBannerDate()
-            }else{
-                window.sessionStorage.setItem("lunbotu",JSON.stringify(arr))
-                resolve(response.data.data.billboards)
-            }
+            .then((response)=>{
+                var arr=response.data.data.billboards
+                if(arr==null){
+                    getHomeBannerDate()
+                }else{
+                    window.sessionStorage.setItem("lunbotu",JSON.stringify(arr))
+                    resolve(response.data.data.billboards)
+                }
 
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
+            })
+            .catch((error)=>{
+                console.log(error);
+            })
     })
 }
 

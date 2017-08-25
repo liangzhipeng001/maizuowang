@@ -25,7 +25,7 @@ export  default class Content extends Component{
                         this.state.data.map((item,index)=>{
                             return (
                                 <div class="item" key={index}
-                                     onClick={this.listAction.bind(this,item.name,index)}>
+                                     onClick={this.listAction.bind(this,item.name,item.id)}>
                                     <div class="item-content">
                                         <div class="img">
                                             <img src={item.imgPath}/>
@@ -56,7 +56,7 @@ export  default class Content extends Component{
                         this.state.data1.map((item,index)=>{
                             return (
                                 <div class="item" key={index}
-                                     onClick={this.listAction.bind(this,item.name,index+5)}>
+                                     onClick={this.listAction.bind(this,item.name,item.id)}>
                                     <div class="item-content">
                                         <div class="img">
                                             <img src={item.imgPath}/>
